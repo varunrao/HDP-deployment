@@ -117,7 +117,7 @@
           "wget https://github.com/varunrao/HDP-deployment/raw/master/blueprint-cluster-definition.json\n",
 
           "wget https://github.com/varunrao/HDP-deployment/raw/master/wait-for-slaves.sh\n",
-          "wget https://github.com/varunrao/HDP-deployment/raw/master/replace-slave-ip.sh\n",
+          "wget https://github.com/varunrao/HDP-deployment/raw/master/replace-host-ip-for-cluster.sh\n",
 
           "chmod +x wait-for-slaves.sh\n",
 

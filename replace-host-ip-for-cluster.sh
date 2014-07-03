@@ -7,4 +7,4 @@ for a in `grep "host_name" ambari-hosts.txt | awk -F':' '{print $(NF)}'`; do
   `sed -i "s/slave$COUNTER/$a/g" blueprint-cluster-definition.json`
 done
 
- `sed -i "s/master/$master_node/g" blueprint-cluster-definition.json`
+ `sed -i "s/master_node/\"$master_node\"/g" blueprint-cluster-definition.json`

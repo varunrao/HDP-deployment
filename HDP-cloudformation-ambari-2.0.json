@@ -41,12 +41,12 @@
     },
     "MinimumSlaveNodes" : {
       "Description" : "Minimum number of slave nodes",
-      "Type": "Integer",
+      "Type": "Number",
       "Default": 1
     },
     "MaximumSlaveNodes" : {
       "Description" : "Maximum number of slave nodes",
-      "Type": "Integer",
+      "Type": "Number",
       "Default": 3
     }     
   },
@@ -102,27 +102,31 @@
 
           "ambari-server setup -s\n",
 
-          "ambari-server start\n"
-          "number_of_slaves=", { "Ref" : "MaximumSlaveNodes" } , "\n"
+          "ambari-server start\n",
 
-          "wget https://github.com/varunrao/HDP-deployment/blob/master/multi-node-hdfs-yarn-blueprint.json\n"
+          "MY_IP=`(curl http://169.254.169.254/latest/meta-data/local-ipv4)`\n",
 
-          "wget https://github.com/varunrao/HDP-deployment/blob/master/blueprint-cluster-definition.json\n"
+          "number_of_slaves=", { "Ref" : "MaximumSlaveNodes" } , "\n",
 
-          "wget https://github.com/varunrao/HDP-deployment/blob/master/wait-for-slaves.sh\n"
-          "wget https://github.com/varunrao/HDP-deployment/blob/master/replace-slave-ip.sh\n"
+          "wget https://github.com/varunrao/HDP-deployment/blob/master/multi-node-hdfs-yarn-blueprint.json\n",
 
-          "chmod +x wait-for-slaves.sh\n"
-          "./wait-for-slaves.sh " , { "Fn::GetAtt" : [ "MasterNode", "PrivateDnsName" ]} , $number_of_slaves "\n"
+          "wget https://github.com/varunrao/HDP-deployment/blob/master/blueprint-cluster-definition.json\n",
+
+          "wget https://github.com/varunrao/HDP-deployment/blob/master/wait-for-slaves.sh\n",
+          "wget https://github.com/varunrao/HDP-deployment/blob/master/replace-slave-ip.sh\n",
+
+          "chmod +x wait-for-slaves.sh\n",
+
+          "./wait-for-slaves.sh $MY_IP $number_of_slaves\n",
           
-          "chmod +x replace-slave-ip.sh\n"
+          "chmod +x replace-slave-ip.sh\n",
 
-          "./replace-slave-ip.sh \n"
+          "./replace-slave-ip.sh \n",
 
-          "curl -u admin:admin -H 'X-Requested-By:Varun' -X POST http://", { "Fn::GetAtt" : [ "MasterNode", "PrivateDnsName" ]} ,":8080/api/v1/blueprints/multi-node-hdfs-yarn-blueprint -d @multi-node-hdfs-yarn-blueprint.json\n" 
+          "curl -u admin:admin -H 'X-Requested-By:Varun' -X POST http://$MY_IP:8080/api/v1/blueprints/multi-node-hdfs-yarn-blueprint -d @multi-node-hdfs-yarn-blueprint.json\n",
 
 
-          "curl -u admin:admin -H 'X-Requested-By:Varun' -X POST http://", { "Fn::GetAtt" : [ "MasterNode", "PrivateDnsName" ]} ,":8080/api/v1/clusters/multi-node-hdfs-yarn-blueprint\n" 
+          "curl -u admin:admin -H 'X-Requested-By:Varun' -X POST http://$MY_IP:8080/api/v1/clusters/multi-node-hdfs-yarn-blueprint\n"
 
         ]]}}        
       }
@@ -169,7 +173,8 @@
           "Value" : { "Fn::Join"  : [ "-" , [ { "Ref" : "AWS::StackName" }, "datanode" ]]},
           "PropagateAtLaunch" : "true"
         }]
-      }
+      },
+      "DependsOn" : "MasterNode"
     },
 
 

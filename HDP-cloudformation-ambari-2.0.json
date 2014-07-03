@@ -42,7 +42,7 @@
     "MinimumSlaveNodes" : {
       "Description" : "Minimum number of slave nodes",
       "Type": "Number",
-      "Default": 1
+      "Default": 3
     },
     "MaximumSlaveNodes" : {
       "Description" : "Maximum number of slave nodes",
@@ -108,12 +108,12 @@
 
           "number_of_slaves=", { "Ref" : "MaximumSlaveNodes" } , "\n",
 
-          "wget https://github.com/varunrao/HDP-deployment/blob/master/multi-node-hdfs-yarn-blueprint.json\n",
+          "wget https://github.com/varunrao/HDP-deployment/raw/master/multi-node-hdfs-yarn-blueprint.json\n",
 
-          "wget https://github.com/varunrao/HDP-deployment/blob/master/blueprint-cluster-definition.json\n",
+          "wget https://github.com/varunrao/HDP-deployment/raw/master/blueprint-cluster-definition.json\n",
 
-          "wget https://github.com/varunrao/HDP-deployment/blob/master/wait-for-slaves.sh\n",
-          "wget https://github.com/varunrao/HDP-deployment/blob/master/replace-slave-ip.sh\n",
+          "wget https://github.com/varunrao/HDP-deployment/raw/master/wait-for-slaves.sh\n",
+          "wget https://github.com/varunrao/HDP-deployment/raw/master/replace-slave-ip.sh\n",
 
           "chmod +x wait-for-slaves.sh\n",
 
@@ -157,8 +157,7 @@
           "ambari-agent start\n"
 
         ]]}}        
-      },
-      "DependsOn" : "MasterNode"
+      }
     },
 
     "DataNodesAutoScalingGroup": {

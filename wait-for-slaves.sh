@@ -2,7 +2,7 @@
 master_node_internal_dns=$1
 number_of_slaves=$2
 # Adds the master node
-number_of_slaves=echo $(($number_of_slaves + 1))
+number_of_slaves=`echo $(($number_of_slaves + 1))`
 
 `curl -i -u admin:admin http://$master_node_internal_dns:8080/api/v1/hosts > ambari-hosts.txt`
 

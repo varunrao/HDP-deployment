@@ -1,5 +1,5 @@
 {
-  "blueprint" : "multi-node-hdfs-yarn",
+  "blueprint" : "multi-node-hdfs-yarn-blueprint",
   "host_groups" :[
     {
       "name" : "master", 

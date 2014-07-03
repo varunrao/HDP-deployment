@@ -5,7 +5,8 @@
       "configurations" : [
         {
           "global" : {
-            "nagios_contact": "me@my-awesome-domain.example"
+            "nagios_contact": "raov@avalonconsult.com",
+            "nagios_web_password": "password"
           }
         }
       ],

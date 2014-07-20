@@ -5,22 +5,14 @@
       "name" : "master", 
       "hosts" : [         
         {
-          "fqdn" : master_node
+          "fqdn" : "master_node"
         }
       ]
     },
     {
       "name" : "slaves", 
       "hosts" : [
-        {
-          "fqdn" : slave1
-        },
-        {
-          "fqdn" : slave2
-        },
-        {
-          "fqdn" : slave3
-        }
+        slave_nodes
       ]
     }
   ]

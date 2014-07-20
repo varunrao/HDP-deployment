@@ -14,5 +14,4 @@ for slave_node_ip in `grep "host_name" ambari-hosts.txt | awk -F':' '{print $(NF
   	  slave_node_ip_list="$slave_node_ip_list \n\{\n\"fqdn\" : \"$slave_node_ip\"\n\}\n"
   fi
 done
-`sed -i "s/slave_nodes/$slave_node_ip_list/g" blueprint-cluster-definition.json`
-`sed -i "s/master_node/\"$master_node_ip\"/g" blueprint-cluste-definition.json`
+`sed -i "s/slave_nodes/$slave_node_ip_list/;s/master_node/\"$master_node_ip\"/" blueprint-cluster-definition.json`

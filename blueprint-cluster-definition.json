@@ -5,7 +5,7 @@
       "name" : "master", 
       "hosts" : [         
         {
-          "fqdn" : "master_node"
+          "fqdn" : master_node
         }
       ]
     },

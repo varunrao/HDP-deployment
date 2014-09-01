@@ -33,6 +33,9 @@
           "name" : "ZOOKEEPER_SERVER"
         },
         {
+          "name" : "ZOOKEEPER_CLIENT"
+        },
+        {
           "name" : "HBASE_MASTER"
         },
         {

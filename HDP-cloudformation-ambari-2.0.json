@@ -97,7 +97,7 @@
 
           "# Setup correct file ownership\n",
           "wget http://public-repo-1.hortonworks.com/ambari/centos6/1.x/updates/1.6.0/ambari.repo -O /etc/yum.repos.d/ambari.repo\n",
-          
+      
           "yum install -y ambari-server\n",
 
           "ambari-server setup -s\n",
@@ -107,6 +107,10 @@
           "yum install -y ambari-agent\n",
 
           "ambari-agent start\n",
+    
+          "yum -y install ant\n",
+
+          "yum -y install git\n",
 
           "MY_IP=`(curl http://169.254.169.254/latest/meta-data/local-hostname)`\n",
 
@@ -191,6 +195,7 @@
           {"IpProtocol" : "tcp", "FromPort" : "8440", "ToPort" : "8440", "CidrIp" : "0.0.0.0/0"},
           {"IpProtocol" : "tcp", "FromPort" : "8441", "ToPort" : "8441", "CidrIp" : "0.0.0.0/0"},
           {"IpProtocol" : "tcp", "FromPort" : "8080", "ToPort" : "8080", "CidrIp" : "0.0.0.0/0"},
+          {"IpProtocol" : "tcp", "FromPort" : "8983", "ToPort" : "8983", "CidrIp" : "0.0.0.0/0"},
           {"IpProtocol" : "tcp", "FromPort" : "22", "ToPort" : "22", "CidrIp" : { "Ref" : "SSHLocation"}}
         ]
       }      

@@ -32,7 +32,7 @@
         {
           "name" : "ZOOKEEPER_SERVER"
         },
-        {
+        { 
           "name" : "ZOOKEEPER_CLIENT"
         },
         {

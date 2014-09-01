@@ -31,6 +31,24 @@
         },
         {
           "name" : "ZOOKEEPER_SERVER"
+        },
+        {
+          "name" : "HBASE_MASTER"
+        },
+        {
+          "name" : "HBASE_CLIENT"
+        },
+        {
+          "name" : "HIVE_SERVER"
+        },
+        {
+          "name" : "HIVE_METASTORE"
+        },
+        {
+          "name" : "APP_TIMELINE_SERVER"
+        },
+        {
+          "name" : "HCAT"
         }
       ],
       "cardinality" : "1"
@@ -55,6 +73,12 @@
         },
         {
           "name" : "ZOOKEEPER_CLIENT"
+        },
+        {
+          "name" : "GANGLIA_MONITOR"
+        },
+        {
+          "name" : "HBASE_REGIONSERVER"
         }
       ],
       "cardinality" : "2"

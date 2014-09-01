@@ -45,9 +45,6 @@
           "name" : "HIVE_METASTORE"
         },
         {
-          "name" : "APP_TIMELINE_SERVER"
-        },
-        {
           "name" : "HCAT"
         }
       ],

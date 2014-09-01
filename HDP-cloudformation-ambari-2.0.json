@@ -198,8 +198,8 @@
   },
   
   "Outputs" : {
-    "WebsiteURL" : {
-      "Value" : { "Fn::Join" : ["", ["http://", { "Fn::GetAtt" : [ "MasterNode", "PublicDnsName" ]}, "/"]] },
+    "HDPMasterNode" : {
+      "Value" : { "Fn::Join" : ["", ["http://", { "Fn::GetAtt" : [ "MasterNode", "PublicDnsName" ]}, ":8080/"]] },
       "Description" : "HDP Host node"
     }
   }

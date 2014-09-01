@@ -42,12 +42,12 @@
     "MinimumSlaveNodes" : {
       "Description" : "Minimum number of slave nodes",
       "Type": "Number",
-      "Default": 3
+      "Default": 2
     },
     "MaximumSlaveNodes" : {
       "Description" : "Maximum number of slave nodes",
       "Type": "Number",
-      "Default": 3
+      "Default": 2
     }     
   },
   

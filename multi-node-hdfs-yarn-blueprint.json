@@ -46,6 +46,9 @@
         },
         {
           "name" : "HCAT"
+        },
+        {
+          "name" : "MYSQL_SERVER"
         }
       ],
       "cardinality" : "1"

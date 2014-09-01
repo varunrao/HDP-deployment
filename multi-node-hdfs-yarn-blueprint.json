@@ -31,27 +31,6 @@
         },
         {
           "name" : "ZOOKEEPER_SERVER"
-        },
-        { 
-          "name" : "ZOOKEEPER_CLIENT"
-        },
-        {
-          "name" : "HBASE_MASTER"
-        },
-        {
-          "name" : "HBASE_CLIENT"
-        },
-        {
-          "name" : "HIVE_SERVER"
-        },
-        {
-          "name" : "HIVE_METASTORE"
-        },
-        {
-          "name" : "HCAT"
-        },
-        {
-          "name" : "MYSQL_SERVER"
         }
       ],
       "cardinality" : "1"
@@ -76,28 +55,9 @@
         },
         {
           "name" : "ZOOKEEPER_CLIENT"
-        },
-        {
-          "name" : "GANGLIA_MONITOR"
-        },
-        {
-          "name" : "HBASE_REGIONSERVER"
         }
       ],
       "cardinality" : "2"
-    }
-  ],
-  "configurations": [
-    {
-      "global": {
-        "hive_metastore_user_passwd": "password"
-      }
-    },
-    {
-      "hive-site": {
-        "javax.jdo.option.ConnectionPassword": "password",
-        "hive.security.authenticator.manager": "org.apache.hadoop.hive.ql.security.HadoopDefaultAuthenticator"
-      }
     }
   ],
   "Blueprints" : {

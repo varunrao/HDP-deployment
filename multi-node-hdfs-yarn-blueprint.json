@@ -15,9 +15,6 @@
           "name" : "NAMENODE"
         },
         {
-          "name" : "AMBARI_SERVER"
-        },
-        {
           "name" : "SECONDARY_NAMENODE"
         },       
         {
@@ -40,12 +37,6 @@
         },
         {
           "name" : "HDFS_CLIENT"
-        },
-        {
-          "name" : "DATANODE"
-        },
-        {
-          "name" : "NODEMANAGER"
         },
         {
           "name" : "ZOOKEEPER_SERVER"

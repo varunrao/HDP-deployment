@@ -30,7 +30,19 @@
           "name" : "GANGLIA_SERVER"
         },
         {
+          "name" : "APP_TIMELINE_SERVER"
+        },
+        {
+          "name" : "YARN_CLIENT"
+        },
+        {
+          "name" : "HDFS_CLIENT"
+        },
+        {
           "name" : "ZOOKEEPER_SERVER"
+        },
+        {
+          "name" : "ZOOKEEPER_CLIENT"
         }
       ],
       "cardinality" : "1"
@@ -55,6 +67,9 @@
         },
         {
           "name" : "ZOOKEEPER_CLIENT"
+        },
+        {
+          "name" : "GANGLIA_MONITOR"
         }
       ],
       "cardinality" : "2"
